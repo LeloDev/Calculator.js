@@ -1,14 +1,86 @@
 "use strict";
-const clickButton1 = document.querySelector(".calculator-bottom")
-const cacContainer = document.querySelector(".calculator-contenedor")
-let num1;
-clickButton1.addEventListener("click",()=>{
-    let num1 = clickButton1.textContent
-    let pantalla = document.createElement("P")
-    pantalla.innerHTML=`Tu numero selecionado es ${num1}`
-    cacContainer.appendChild(pantalla)
-    if (num1 !==null) {
-        console.log("govir")
+let actual  = document.querySelector(".gov").innerHTML;
+const clickButton1 = document.querySelector(".cal1").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".cal1").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const clickButton2 = document.querySelector(".cal2").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".cal2").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const clickButton3 = document.querySelector(".cal3").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".cal3").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const clickButton4 = document.querySelector(".cal4").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".cal4").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const clickButton5 = document.querySelector(".cal5").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".cal5").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const clickButton6 = document.querySelector(".cal6").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".cal6").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const clickButton7 = document.querySelector(".cal7").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".cal7").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const clickButton8 = document.querySelector(".cal8").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".cal8").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const clickButton9 = document.querySelector(".cal9").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".cal29").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const clickButton0 = document.querySelector(".cal0").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".cal0").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+
+const buttonSuma= document.querySelector(".sum").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".sum").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const ac = document.querySelector(".ac").addEventListener("click",()=>{
+    let actual = document.querySelector(".gov").innerHTML = ""
+})
+const muestraResultado = document.querySelector(".resu").addEventListener("click",()=>{
+    let actual = document.querySelector(".gov").innerHTML
+    let suma = actual.indexOf("+")
+    if (suma !== -1){
+        let arr = actual.split("+",2)
+        let res = parseInt(arr[0]) + parseInt(arr[1])
+        document.querySelector(".gov").innerHTML=res
     }
 })
 
+///////////////////// ADVERTENCIA LOCAL STORAGE
+const modal = document.querySelector(".modal-background")
+const closeModal = document.querySelector(".closemodal")
+const advertencia = ()=>{
+    closeModal.addEventListener("click",()=>{
+        localStorage.setItem("adv","en")
+    })
+}
+const bobito = localStorage.getItem("adv")
+if (bobito === null) {
+    advertencia()
+} else {
+    modal.style.display="none"
+    console.log("exito")
+}
