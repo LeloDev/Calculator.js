@@ -1,0 +1,21 @@
+.calculator-contenedor{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+}
+.calculator-botones{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 2em;
+    margin: 5px;
+    padding: 10px;
+    width: 120px;
+}
+.calculator-bottom{
+    margin: 2px;
+}
