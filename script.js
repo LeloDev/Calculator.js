@@ -42,7 +42,7 @@ const clickButton8 = document.querySelector(".cal8").addEventListener("click",()
 })
 const clickButton9 = document.querySelector(".cal9").addEventListener("click",()=>{
     let actual  = document.querySelector(".gov").innerHTML;
-    let sumado = document.querySelector(".cal29").innerHTML
+    let sumado = document.querySelector(".cal9").innerHTML
     let res = document.querySelector(".gov").innerHTML=actual + sumado
 })
 const clickButton0 = document.querySelector(".cal0").addEventListener("click",()=>{
@@ -50,11 +50,41 @@ const clickButton0 = document.querySelector(".cal0").addEventListener("click",()
     let sumado = document.querySelector(".cal0").innerHTML
     let res = document.querySelector(".gov").innerHTML=actual + sumado
 })
-
+const buttonResta = document.querySelector(".resta").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".resta").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
 const buttonSuma= document.querySelector(".sum").addEventListener("click",()=>{
     let actual  = document.querySelector(".gov").innerHTML;
     let sumado = document.querySelector(".sum").innerHTML
     let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const buttonMult = document.querySelector(".multiplicar").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".multiplicar").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const buttonDividir = document.querySelector(".dividir").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".dividir").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const valorAbsoluto = document.querySelector(".absolute").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+        let res = Math.abs(actual)
+        document.querySelector(".gov").innerHTML=res
+    }
+)
+const exponenciacion = document.querySelector(".exp").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+    let sumado = document.querySelector(".exp").innerHTML
+    let res = document.querySelector(".gov").innerHTML=actual + sumado
+})
+const raizCuadrada = document.querySelector(".raiz-cuadrada").addEventListener("click",()=>{
+    let actual  = document.querySelector(".gov").innerHTML;
+        let res = Math.sqrt(actual)
+        document.querySelector(".gov").innerHTML=res
 })
 const ac = document.querySelector(".ac").addEventListener("click",()=>{
     let actual = document.querySelector(".gov").innerHTML = ""
@@ -62,11 +92,31 @@ const ac = document.querySelector(".ac").addEventListener("click",()=>{
 const muestraResultado = document.querySelector(".resu").addEventListener("click",()=>{
     let actual = document.querySelector(".gov").innerHTML
     let suma = actual.indexOf("+")
+    let resta = actual.indexOf("-")
+    let multiplicar = actual.indexOf("X")
+    let dividir = actual.indexOf("/")
+    let exp = actual.indexOf("^")
     if (suma !== -1){
         let arr = actual.split("+",2)
         let res = parseInt(arr[0]) + parseInt(arr[1])
         document.querySelector(".gov").innerHTML=res
-    }
+    } else if (resta !== -1) {
+        let arr = actual.split("-",2)
+        let res = arr[0] - arr[1]
+        document.querySelector(".gov").innerHTML=res
+    } else if (multiplicar !== -1){
+        let arr = actual.split("X",2)
+        let res = arr[0] * arr[1]
+        document.querySelector(".gov").innerHTML=res
+    } else if (dividir !== -1){
+        let arr = actual.split("/",2)
+        let res = arr[0] / arr[1]
+        document.querySelector(".gov").innerHTML=res
+    } else if (exp !== -1) {
+        let arr = actual.split("^",2)
+        let res = arr[0]  ** arr[1]
+        document.querySelector(".gov").innerHTML=res
+    } 
 })
 
 ///////////////////// ADVERTENCIA LOCAL STORAGE
@@ -81,6 +131,6 @@ const bobito = localStorage.getItem("adv")
 if (bobito === null) {
     advertencia()
 } else {
-    modal.style.display="none"
     console.log("exito")
+    modal.style.display="none"
 }
